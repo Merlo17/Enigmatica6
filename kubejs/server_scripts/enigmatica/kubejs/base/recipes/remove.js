@@ -5,8 +5,6 @@ events.listen('recipes', function (event) {
     event.remove({ mod: 'prettypipes' });
 
     var outputRemovals = [
-        'additionalbars:crossed_iron_bars',
-
         'bambooeverything:bamboo_bundle',
 
         'byg:blue_enchanted_crafting_table',
@@ -67,6 +65,8 @@ events.listen('recipes', function (event) {
         'immersiveengineering:crafting/stick_aluminum',
         'immersiveengineering:crafting/stick_iron',
 
+        'immersivepetroleum:distillationtower/oilcracking',
+
         'mapperbase:steel_nugget_from_blasting',
         'mapperbase:steel_plate_from_blasting',
         'mapperbase:steel_block_from_blasting',
@@ -87,7 +87,9 @@ events.listen('recipes', function (event) {
         'thermal:machine/centrifuge/centrifuge_oil_red_sand',
         'thermal:machine/centrifuge/centrifuge_oil_sand',
         'thermal:machine/plugins/create/pulverizer_create_zinc_ore',
-        'thermal:machine/plugins/mekanism/pulverizer_mek_osmium_ore'
+        'thermal:machine/plugins/mekanism/pulverizer_mek_osmium_ore',
+        'powah:crafting/energy_cell_basic_2',
+        'powah:crafting/cable_basic'
     ];
 
     outputRemovals.forEach((removal) => {
@@ -152,6 +154,11 @@ events.listen('recipes', function (event) {
         type: 'occultism:miner'
     });
 
+    event.remove({
+        output: '/powah:\\w+_starter/',
+        mod: 'powah'
+    });
+
     event.remove({ type: 'botanypots:crop' });
     event.remove({ type: 'botanypots:soil' });
     event.remove({ type: 'thermal:insolator' });
@@ -182,6 +189,12 @@ events.listen('recipes', function (event) {
     event.remove({
         input: '#forge:ores/nickel',
         type: 'thermal:smelter'
+    });
+    event.remove({
+        id: /emendatusenigmatica:ore_from_chunk_crafting/
+    });
+    event.remove({
+        id: /emendatusenigmatica:ore_from_chunk_stonecutting/
     });
     event.remove({
         input: 'minecraft:fire_charge',

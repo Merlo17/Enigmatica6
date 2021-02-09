@@ -103,6 +103,7 @@ const colors = [
 var itemsToHide = [
     'ars_nouveau:arcane_brick',
     'ars_nouveau:arcane_ore',
+    'ars_nouveau:mana_gem_block',
     'bloodmagic:coalsand',
     'bloodmagic:saltpeter',
     'bloodmagic:sulfur',
@@ -173,6 +174,8 @@ var regexHide = [
     /minecraft:\w+_ore/,
     /immersiveengineering:plate_/,
     /immersiveengineering:stick_/,
+    /immersiveengineering:storage_/,
+    /immersiveengineering:ore_/,
     /create:\w+_sheet/,
     /create:\w+_nugget/,
     /create:\w+_ingot/,
@@ -185,6 +188,8 @@ var regexHide = [
     /emendatusenigmatica:\w+certus/,
     /emendatusenigmatica:\w+fluix/,
     /mapperbase:steel/,
+    /mapperbase:\w+_block/,
+
     /rftoolsbase:dimensionalshard/
 ];
 

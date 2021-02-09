@@ -18,29 +18,8 @@ events.listen('jei.hide.items', (event) => {
             'mekanism:block_' + material,
             'eidolon:ingot_' + material,
             'eidolon:nugget_' + material,
-            'eidolon:block_' + material
-        );
-    });
-
-    var bopWoods = [
-        'fir',
-        'redwood',
-        'cherry',
-        'mahogany',
-        'jacaranda',
-        'palm',
-        'willow',
-        'dead',
-        'magic',
-        'umbran',
-        'hellbark'
-    ];
-
-    bopWoods.forEach((material) => {
-        itemsToHide.push(
-            'additionalbars:horizontal_' + material + '_bars',
-            'additionalbars:crossed_' + material + '_bars',
-            'additionalbars:' + material + '_bars'
+            'eidolon:block_' + material,
+            'thermal:' + material + '_block'
         );
     });
 
