@@ -419,6 +419,9 @@ events.listen('recipes', (event) => {
         shapedRecipe(Item.of('quark:turf', 1), ['A', 'A'], {
             A: 'quark:turf_slab'
         }),
+        shapedRecipe(Item.of('minecraft:string', 3), ['AA', 'A '], {
+            A: 'supplementaries:flax'
+        }),
 
         //ID Overrides
         shapedRecipe(
@@ -463,7 +466,8 @@ events.listen('recipes', (event) => {
             });
         }
 
-        var dupes = ['palo_verde',
+        var dupes = [
+            'palo_verde',
             'withering_oak',
             'blue_archwood',
             'green_archwood',
@@ -471,12 +475,13 @@ events.listen('recipes', (event) => {
             'menril_filled',
             'watchful_aspen',
             'crustose',
-            'sappy_maple'];
-        dupes.forEach((dupe) => {
-            if(wood.logType == dupe) {
-                return;
-            }
-        })
+            'sappy_maple'
+        ];
+
+        if (dupes.includes(wood.logType)) {
+            return;
+        }
+
         //All recipes using planks here
         event.shaped(Item.of('minecraft:oak_sign', 3), ['AAA', 'AAA', ' B '], {
             A: wood.plankBlock,
@@ -500,9 +505,9 @@ events.listen('recipes', (event) => {
             C: '#forge:chests'
         });
         var slab = wood.modId + ':' + wood.logType + '_slab';
-        if(wood.logType == 'red_archwood') {
+        if (wood.logType == 'red_archwood') {
             slab = 'ars_nouveau:archwood_slab';
-        };
+        }
         event.shaped(Item.of('storagedrawers:oak_half_drawers_1'), ['AAA', ' C ', 'AAA'], {
             A: slab,
             C: '#forge:chests'
